@@ -7,7 +7,7 @@ li {
   padding: 0;
   margin: 0;
   font-family: 'Jua';
-  color:#383838;
+  color: #383838;
 }
 
 a {
@@ -27,17 +27,24 @@ a {
 }
 
 /*--------------  section-1  --------------*/
-.seoul-bg {
+.seoul-bg,
+.busan-bg {
+  display: none;
   top: 0;
-  left:0;
+  left: 0;
   z-index: -1;
+}
+
+.seoul-bg.active,
+.busan-bg.active {
+  display: block;
 }
 
 .top-bar {
   position: fixed;
   height: 130px;
-  left:50%;
-  transform:translateX(-50%);
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .top-bar .logo-box {
@@ -51,60 +58,64 @@ a {
   padding: 10px 0;
 }
 
-.top-bar .logo-box > a {
+.top-bar .logo-box>a {
   margin-left: 20px;
 }
 
-.button-box > a {
+.button-box>a {
   margin-top: 15px;
   font-size: 14px;
   padding: 2px 22px;
   border-radius: 15px;
 }
 
+.btn-busan,
 .btn-seoul {
-  background-color: #FFA800;
-  color:white;
-}
-
-.btn-busan {
   background-color: #EEEEEE;
-  color:#B0B0B0;
-  margin-left:6px;
+  color: #B0B0B0;
+  margin-left: 6px;
 }
 
-.btn-busan:hover {
+.btn-busan.active,
+.btn-seoul.active {
   background-color: #FFA800;
-  color:white;
+  color: white;
 }
 
-.top-bar > nav > ul > li > a {
+.btn-busan:hover,
+.btn-seoul:hover {
+  background-color: #FFA800;
+  color: white;
+}
+
+.top-bar>nav>ul>li>a {
   width: 200px;
   justify-content: center;
   position: relative;
+  font-size: 20px;
 }
 
-.top-bar > nav > ul ul {
+.top-bar>nav>ul ul {
   display: none;
   position: absolute;
   margin-top: -10px;
   margin-left: 60px;
   width: 215px;
   height: 243px;
-  background-image: url(images/malpungsun.png);  
+  background-image: url(images/malpungsun.png);
   padding-top: 28px;
 }
 
-.top-bar > nav > ul > li:last-child > ul > li:last-child {
-margin-left: 28px;
+.top-bar>nav>ul>li:last-child>ul>li:last-child {
+  margin-left: 28px;
   width: 160px;
 }
 
-.top-bar > nav > ul > li:hover > ul {
+.top-bar>nav>ul>li:hover>ul {
   display: block;
 }
 
-.top-bar > nav > ul ul > li > a {
+.top-bar>nav>ul ul>li>a {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -112,73 +123,198 @@ margin-left: 28px;
   align-items: center;
 }
 
-.top-bar > nav > ul li:hover > a {
-  color:#FFA800;
+.top-bar>nav>ul li:hover>a {
+  color: #FFA800;
 }
 
 .cloud {
-  left:-150px;
-  animation:dungdung1 3s none infinite alternate;
+  left: -150px;
+  animation: dungdung1 3s none infinite alternate;
 }
 
 .balloon {
-  left:350px;
-  animation:dungdung2 2s none infinite alternate;
+  left: 350px;
+  animation: dungdung2 2s none infinite alternate;
 }
 
 @keyframes dungdung1 {
   0% {
-    top:0;
+    top: 0;
   }
+
   100% {
-    top:30px;
+    top: 30px;
   }
 }
 
 @keyframes dungdung2 {
   0% {
-    top:400px;
+    top: 400px;
   }
+
   100% {
-    top:365px;
+    top: 365px;
   }
 }
 
 .girl {
-  left:46%;
-  transform:translateX(50%);
-  animation:jump 1s none infinite alternate;
+  left: 46%;
+  transform: translateX(50%);
+  animation: jump 1s none infinite alternate;
 }
 
 @keyframes jump {
   0% {
-    transform:scale(1.1);
-    top:54%;
+    transform: scale(1.1);
+    top: 55%;
   }
+
   100% {
-    transform:scale(1);
-    top:58%;
+    transform: scale(1);
+    top: 59%;
   }
 }
 
-.shadow {
-  left:41%;
-  top:70%;
-  background-color: transparent;
-  border:transparent;
-  box-shadow: 0 0 0 0;
-  filter:none;
-  animation:scale 1s none infinite alternate;
+.shadow1,
+.shadow2 {
+  left: 36%;
+  top: 67%;
+  animation: scale 1s none infinite alternate;
 }
 
 @keyframes scale {
   0% {
-    transform:scale(2);
+    transform: scale(1.2);
     opacity: 0.5;
   }
+
   100% {
-    transform:scale(1);
+    transform: scale(1);
     opacity: 1;
+  }
+}
+
+.crab1 {
+  left: 470px;
+  top: 753px;
+  display: block;
+  animation: crab2 3s none infinite alternate;
+}
+
+.crab2 {
+  right: 175px;
+  top: 806px;
+  display: block;
+  animation: crab1 3s none infinite alternate;
+}
+
+@keyframes crab1 {
+  0% {
+    margin-right: 0;
+  }
+
+  100% {
+    margin-right: 100px;
+  }
+}
+
+@keyframes crab2 {
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: 100px;
+  }
+}
+
+.dolphin {
+  left: 188px;
+  top: 343px;
+  animation: dolphin 2s none infinite alternate;
+}
+
+@keyframes dolphin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+.ball {
+  left: 600px;
+  animation: ball 2s none infinite alternate;
+}
+
+@keyframes ball {
+  0% {
+    top: 454px;
+  }
+
+  100% {
+    top: 434px;
+  }
+}
+
+.turtle {
+  right: 691px;
+  top: 498px;
+  animation: crab1 10s 1s none infinite alternate;
+}
+
+.ship {
+  top: 350px;
+  animation: ship 6s none infinite alternate;
+}
+
+@keyframes ship {
+  0% {
+    right: 370px;
+  }
+
+  100% {
+    right: 450px;
+  }
+}
+
+.gull1 {
+  animation: gull1 3s none infinite alternate;
+}
+
+@keyframes gull1 {
+  0% {
+    left: 250px;
+    top: 150px;
+    transform: rotate(0) scale(0.5);
+  }
+
+  100% {
+    left: 320px;
+    top: 221px;
+    transform: rotate(-20deg) scale(1);
+  }
+}
+
+.gull2 {
+  right: 311px;
+  top: 267px;
+  animation: gull2 3s none infinite alternate;
+}
+
+@keyframes gull2 {
+  0% {
+    right: 250px;
+    top: 150px;
+    transform: rotate(0) scale(0.5);
+  }
+
+  100% {
+    right: 280px;
+    top: 200px;
+    transform: rotate(10deg) scale(0.9);
   }
 }
 
