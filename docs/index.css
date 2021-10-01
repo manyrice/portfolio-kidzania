@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
 body,
 ul,
 li {
   list-style: none;
   padding: 0;
   margin: 0;
+  font-family: 'Jua';
+  color:#383838;
 }
 
 a {
@@ -12,8 +16,7 @@ a {
 }
 
 .con {
-  min-width: 800px;
-  max-width: 1980px;
+  width: 1920px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -23,8 +26,8 @@ a {
   display: block;
 }
 
+/*--------------  section-1  --------------*/
 .seoul-bg {
-  position: relative;
   top: 0;
   left:0;
   z-index: -1;
@@ -48,11 +51,14 @@ a {
   padding: 10px 0;
 }
 
+.top-bar .logo-box > a {
+  margin-left: 20px;
+}
+
 .button-box > a {
   margin-top: 15px;
   font-size: 14px;
-  font-weight: bold;
-  padding: 3px 22px;
+  padding: 2px 22px;
   border-radius: 15px;
 }
 
@@ -106,6 +112,74 @@ margin-left: 28px;
   align-items: center;
 }
 
-.top-bar > nav ul > li:hover > a {
-  font-weight: bold;
+.top-bar > nav > ul li:hover > a {
+  color:#FFA800;
 }
+
+.cloud {
+  left:-150px;
+  animation:dungdung1 3s none infinite alternate;
+}
+
+.balloon {
+  left:350px;
+  animation:dungdung2 2s none infinite alternate;
+}
+
+@keyframes dungdung1 {
+  0% {
+    top:0;
+  }
+  100% {
+    top:30px;
+  }
+}
+
+@keyframes dungdung2 {
+  0% {
+    top:400px;
+  }
+  100% {
+    top:365px;
+  }
+}
+
+.girl {
+  left:46%;
+  transform:translateX(50%);
+  animation:jump 1s none infinite alternate;
+}
+
+@keyframes jump {
+  0% {
+    transform:scale(1.1);
+    top:54%;
+  }
+  100% {
+    transform:scale(1);
+    top:58%;
+  }
+}
+
+.shadow {
+  left:41%;
+  top:70%;
+  background-color: transparent;
+  border:transparent;
+  box-shadow: 0 0 0 0;
+  filter:none;
+  animation:scale 1s none infinite alternate;
+}
+
+@keyframes scale {
+  0% {
+    transform:scale(2);
+    opacity: 0.5;
+  }
+  100% {
+    transform:scale(1);
+    opacity: 1;
+  }
+}
+
+/*--------------  section-2  --------------*/
