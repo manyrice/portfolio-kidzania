@@ -1,3 +1,111 @@
-body {
-  background-color: #999;
+body,
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.con {
+  min-width: 800px;
+  max-width: 1980px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.img-box>img {
+  width: 100%;
+  display: block;
+}
+
+.seoul-bg {
+  position: relative;
+  top: 0;
+  left:0;
+  z-index: -1;
+}
+
+.top-bar {
+  position: fixed;
+  height: 130px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.top-bar .logo-box {
+  background-color: #fff;
+  width: 260px;
+  height: 120px;
+  border-radius: 0 0 40px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.button-box > a {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 3px 22px;
+  border-radius: 15px;
+}
+
+.btn-seoul {
+  background-color: #FFA800;
+  color:white;
+}
+
+.btn-busan {
+  background-color: #EEEEEE;
+  color:#B0B0B0;
+  margin-left:6px;
+}
+
+.btn-busan:hover {
+  background-color: #FFA800;
+  color:white;
+}
+
+.top-bar > nav > ul > li > a {
+  width: 200px;
+  justify-content: center;
+  position: relative;
+}
+
+.top-bar > nav > ul ul {
+  display: none;
+  position: absolute;
+  margin-top: -10px;
+  margin-left: 60px;
+  width: 215px;
+  height: 243px;
+  background-image: url(images/malpungsun.png);  
+  padding-top: 28px;
+}
+
+.top-bar > nav > ul > li:last-child > ul > li:last-child {
+margin-left: 28px;
+  width: 160px;
+}
+
+.top-bar > nav > ul > li:hover > ul {
+  display: block;
+}
+
+.top-bar > nav > ul ul > li > a {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 40px;
+  align-items: center;
+}
+
+.top-bar > nav ul > li:hover > a {
+  font-weight: bold;
 }
