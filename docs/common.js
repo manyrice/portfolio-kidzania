@@ -12,3 +12,22 @@ $('.btn-seoul').click(function() {
   $('.busan-bg').removeClass('active');
   $('.seoul-bg').addClass('active');
 });
+
+
+// Section3 스와이퍼 슬라이드
+function Section3__init() {
+  const swiper = new Swiper('.section3-slide .swiper-container', {
+    loop: true,
+    navigation: {
+      nextEl: ".btn-next",
+      prevEl: ".btn-prev",
+    },
+    on: {
+      slideChange: function() {
+        $('.section3-slide').attr('data-swiper-slide-index', this.realIndex);
+      }
+    }
+  });
+}
+
+PortfolioSlider__init();
