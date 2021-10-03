@@ -18,8 +18,8 @@ function Section3__init() {
   const swiper = new Swiper('.section3-slide .swiper-container', {
     loop: true,
     navigation: {
-      nextEl: ".btn-next1",
-      prevEl: ".btn-prev1",
+      nextEl: ".btn-next1-1",
+      prevEl: ".btn-prev1-1",
     },
     on: {
       slideChange: function () {
@@ -37,8 +37,8 @@ function Section4__init() {
     slidesPerView: 3,
       spaceBetween: 50,
     navigation: {
-      nextEl: ".btn-next2",
-      prevEl: ".btn-prev2",
+      nextEl: ".btn-next1-2",
+      prevEl: ".btn-prev1-2",
     },
     on: {
       slideChange: function () {
@@ -57,3 +57,42 @@ $('.targetage, .targettendency').click(function() {
     $(this).stop().slideUp(500);
   });
 });
+
+
+// Section6 스와이퍼 슬라이드 1
+function Section6_1__init() {
+  const swiper = new Swiper('.section6-slide1 .swiper-container', {
+    loop: true,
+    slidesPerView: 2,
+      spaceBetween: 0,
+    navigation: {
+      nextEl: ".btn-next2-1",
+      prevEl: ".btn-prev2-1",
+    },
+    on: {
+      slideChange: function () {
+        $('.section4-slide1').attr('data-swiper-slide-index', this.realIndex);
+      }
+    }
+  });
+}
+Section6_1__init();
+
+// Section6 스와이퍼 슬라이드 2
+function Section6_2__init() {
+  const swiper = new Swiper('.section6-slide2 .swiper-container', {
+    loop: true,
+    slidesPerView: 3,
+      spaceBetween: 0,
+    navigation: {
+      nextEl: ".btn-next2-2",
+      prevEl: ".btn-prev2-2",
+    },
+    on: {
+      slideChange: function () {
+        $('.section4-slide2').attr('data-swiper-slide-index', this.realIndex);
+      }
+    }
+  });
+}
+Section6_2__init();
