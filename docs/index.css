@@ -28,6 +28,33 @@ a {
   display: block;
 }
 
+/* 로딩페이지 */
+.loading {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: #fcffea;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+}
+
+.loading > img {
+  width:250px;
+  animation: dungdung2 .7s none infinite alternate;
+}
+
+.loading::after {
+  font-family: 'Jua';
+  content:"Wait Please...";
+  position: absolute;
+  top:54%;
+  font-size: 30px;
+}
+
 /*--------------  section-1  --------------*/
 .seoul-bg,
 .busan-bg {
@@ -47,7 +74,7 @@ a {
   height: 130px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 100;
+  z-index: 1;
 }
 
 .top-bar .logo-box {

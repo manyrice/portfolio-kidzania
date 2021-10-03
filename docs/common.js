@@ -1,3 +1,13 @@
+console.clear();
+// 로딩화면
+$("body").imagesLoaded(function () {
+  // 이 부분을 0으로 바뀌면 로딩화면이 안보일 때가 있습니다. 억지로라도 로딩화면을 보여주려면 이 부분을 남겨두세요. 500이 적당합니다.
+  const fakeLoadingMilliSeconds = 3000;
+  setTimeout(function () {
+    $(".loading").remove();
+  }, fakeLoadingMilliSeconds);
+});
+
 // 메인 첫화면 부산버튼
 $('.btn-busan').click(function () {
   $('.btn-busan').addClass('active');
